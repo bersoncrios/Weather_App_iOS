@@ -22,6 +22,7 @@
 		B211113E2E2C608D004D240A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B21111412E2C608D004D240A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21111432E2C608D004D240A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B21111492E2E6A53004D240A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 		B21111292E2C6089004D240A = {
 			isa = PBXGroup;
 			children = (
+				B21111492E2E6A53004D240A /* README.md */,
 				B21111342E2C6089004D240A /* Weather App */,
 				B21111332E2C6089004D240A /* Products */,
 			);
