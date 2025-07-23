@@ -75,6 +75,13 @@ class DailyForecastTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func loadData(weekDay: String?, min: String?, max: String?, icon: UIImage?) {
+            weekDayLabel.text = weekDay
+            minTemperatureDayLabel.text = "min \(min ?? "")"
+            maxTemperatureDayLabel.text = "max \(max ?? "")"
+            iconImageView.image = icon
+    }
+    
     private func setupView() {
         backgroundColor = .clear
         selectionStyle = .none

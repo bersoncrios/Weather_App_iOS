@@ -41,7 +41,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20)
-        label.text = "Palmas"
         label.textAlignment = .center
         label.textColor = .primaryColor
         return label
@@ -51,7 +50,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 70, weight: .bold)
-        label.text = "25°C"
         label.textAlignment = .left
         label.textColor = .primaryColor
         return label
@@ -70,7 +68,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.text = "1000mm"
         label.textColor = .contrastColor
         return label
     }()
@@ -88,7 +85,6 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.text = "10km/h"
         label.textColor = .contrastColor
         return label
     }()
@@ -162,16 +158,31 @@ class ViewController: UIViewController {
     }()
     
     private let service = Service()
+    private var city = City(lat: "-10.1711872", lon: "-48.3093954", name: "Palmas")
+    private var forecastResponse: ForecastResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
-        service.fecthData(city: City(lat: "-10.1711872", lon: "-48.3093954", name: "Palmas")){ message in
-            print(message)
+        fetchData()
+    }
+
+    private func fetchData() {
+        service.fecthData(city: city){ [weak self] response in
+            self?.forecastResponse = response
+            DispatchQueue.main.async {
+                self?.loadData()
+            }
         }
     }
     
+    private func loadData() {
+        cityLabel.text = city.name
+        temperatureLabel.text = "\(Int(forecastResponse?.main.temp ?? 0)) ºC"
+        humidityValueLabel.text = "\(forecastResponse?.main.humidity ?? 0000)mm"
+        windValueLabel.text = "\(forecastResponse?.wind.speed ?? 000)km/h"
+    }
     private func setupView(){
         view.backgroundColor = .red
         
@@ -215,13 +226,13 @@ class ViewController: UIViewController {
             cityLabel.heightAnchor.constraint(equalToConstant: 20),
 
             temperatureLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 12),
-            temperatureLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 26),
+            temperatureLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 18),
             
             weatherIcon.heightAnchor.constraint(equalToConstant: 86),
             weatherIcon.widthAnchor.constraint(equalToConstant: 86),
-            weatherIcon.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -26),
+            weatherIcon.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -18),
             weatherIcon.centerYAnchor.constraint(equalTo: temperatureLabel.centerYAnchor),
-            weatherIcon.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: 15),
+            weatherIcon.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: 8),
         ])
         
         NSLayoutConstraint.activate([
@@ -257,22 +268,50 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        /*return forecastResponse?.hourly.count ?? 0*/
         return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyForecastCollectionViewCell.indentifier, for: indexPath)
+        /*
+         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyForecastCollectionViewCell.indentifier,
+                                                                    for: indexPath) as? HourlyForecastCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                
+                let forecast = forecastResponse?.hourly[indexPath.row]
+                cell.loadData(time: forecast?.dt.toHourFormat(),
+                              icon: UIImage(named: forecast?.weather.first?.icon ?? ""),
+                              temp: forecast?.temp.toCelsius())
+                return cell
+         */
         return cell
     }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /*return forecastResponse?.daily.count ?? 0 */
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DailyForecastTableViewCell.indentifier, for: indexPath )
+        /*
+         guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyForecastTableViewCell.identifier,
+                                                               for: indexPath) as? DailyForecastTableViewCell else {
+                    return UITableViewCell()
+                }
+                
+                let forecast = forecastResponse?.daily[indexPath.row]
+                cell.loadData(weekDay: forecast?.dt.toWeekdayName().uppercased(),
+                              min: forecast?.temp.min.toCelsius(),
+                              max: forecast?.temp.max.toCelsius(),
+                              icon: UIImage(named: forecast?.weather.first?.icon ?? ""))
+                
+                return cell
+         */
         return cell
     }
     
