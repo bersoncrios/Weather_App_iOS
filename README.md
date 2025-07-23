@@ -135,3 +135,4 @@ Contribuições são bem-vindas! Se quiser ajudar:
 
 ### ☁️ Tela com Resultado do Clima
 <img src="screenshots/home.png" alt="Tela de exibição de clima" width="300"/>
+<img src="screenshots/home.png" alt="Tela de exibição de clima" width="300"/>

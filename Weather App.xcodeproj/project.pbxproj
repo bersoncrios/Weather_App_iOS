@@ -51,7 +51,6 @@
 		B21111292E2C6089004D240A = {
 			isa = PBXGroup;
 			children = (
-				B2ED73742E31283900978E00 /* screenshots */,
 				B2ED73722E31267F00978E00 /* LICENSE */,
 				B21111492E2E6A53004D240A /* README.md */,
 				B21111342E2C6089004D240A /* Weather App */,
@@ -70,6 +69,7 @@
 		B21111342E2C6089004D240A /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
+				B2ED73742E31283900978E00 /* screenshots */,
 				B2ED73712E31249300978E00 /* Views */,
 				B2ED73702E3123F600978E00 /* Extensions */,
 				B2ED736F2E3123C200978E00 /* Resources */,
