@@ -14,6 +14,7 @@
 		B21111422E2C608D004D240A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B21111412E2C608D004D240A /* Base */; };
 		B2ED73652E3005A300978E00 /* HourlyForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED73642E3005A300978E00 /* HourlyForecastCollectionViewCell.swift */; };
 		B2ED73672E300C0900978E00 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED73662E300C0900978E00 /* Color+Extensions.swift */; };
+		B2ED73692E305A9600978E00 /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED73682E305A9600978E00 /* DailyForecastTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B21111492E2E6A53004D240A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2ED73642E3005A300978E00 /* HourlyForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2ED73662E300C0900978E00 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		B2ED73682E305A9600978E00 /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		B21111342E2C6089004D240A /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
+				B2ED73682E305A9600978E00 /* DailyForecastTableViewCell.swift */,
 				B21111352E2C6089004D240A /* AppDelegate.swift */,
 				B21111372E2C6089004D240A /* SceneDelegate.swift */,
 				B21111392E2C6089004D240A /* ViewController.swift */,
@@ -144,6 +147,7 @@
 			files = (
 				B2ED73672E300C0900978E00 /* Color+Extensions.swift in Sources */,
 				B211113A2E2C6089004D240A /* ViewController.swift in Sources */,
+				B2ED73692E305A9600978E00 /* DailyForecastTableViewCell.swift in Sources */,
 				B21111362E2C6089004D240A /* AppDelegate.swift in Sources */,
 				B2ED73652E3005A300978E00 /* HourlyForecastCollectionViewCell.swift in Sources */,
 				B21111382E2C6089004D240A /* SceneDelegate.swift in Sources */,
