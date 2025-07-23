@@ -17,6 +17,7 @@
 		B2ED73692E305A9600978E00 /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED73682E305A9600978E00 /* DailyForecastTableViewCell.swift */; };
 		B2ED736B2E3065E100978E00 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED736A2E3065E000978E00 /* Service.swift */; };
 		B2ED73732E31267F00978E00 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B2ED73722E31267F00978E00 /* LICENSE */; };
+		B2ED737A2E312A9E00978E00 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B2ED73792E312A9E00978E00 /* home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		B2ED73682E305A9600978E00 /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
 		B2ED736A2E3065E000978E00 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B2ED73722E31267F00978E00 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B2ED73792E312A9E00978E00 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../../../../var/folders/0f/h3d_xlcx33360bqd8x4t3kgw0000gn/T/TemporaryItems/NSIRD_screencaptureui_R9lxsL/home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 		B21111292E2C6089004D240A = {
 			isa = PBXGroup;
 			children = (
+				B2ED73742E31283900978E00 /* screenshots */,
 				B2ED73722E31267F00978E00 /* LICENSE */,
 				B21111492E2E6A53004D240A /* README.md */,
 				B21111342E2C6089004D240A /* Weather App */,
@@ -121,6 +124,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B2ED73742E31283900978E00 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				B2ED73792E312A9E00978E00 /* home.png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +192,7 @@
 			files = (
 				B2ED73732E31267F00978E00 /* LICENSE in Resources */,
 				B211113F2E2C608D004D240A /* Assets.xcassets in Resources */,
+				B2ED737A2E312A9E00978E00 /* home.png in Resources */,
 				B21111422E2C608D004D240A /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

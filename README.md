@@ -70,24 +70,9 @@ Weather_App_iOS/
 - **Models**: structs que representam as respostas JSON (temperatura, clima, ícone etc.)  
 - **Services**: `WeatherService` cuida da conexão com a API e modelagem de dados  
 - **Extensions**:  
-  - `UIColor+AppColors.swift`: paleta de cores do app  
-  - `UIView+Anchors.swift`: helpers de layout via constraints  
-  - `Date+Formatting.swift`: formatações de data/hora  
+  - `Color+Extensions.swift`: paleta de cores do app  
 - **Views**: componentes visuais criados via View Code  
 - **Controllers**: lógica de interface e interação com o usuário
-
----
-
-## 🎨 View Code e Layouts
-
-- **MainWeatherView.swift**  
-  - `UIView` que contém `UIStackView`, `UILabel` e `UIImageView`  
-- **WeatherHeaderView.swift**  
-  - Exibe nome da cidade, descrição do clima, temperatura atual e ícone  
-- **WeatherCell.swift**  
-  - Representa uma célula de `UITableView` com hora, temperatura e ícone  
-
-Todos os elementos usam `NSLayoutConstraint` ou helpers de Anchor nas Extensions para posicionamento programático.
 
 ---
 
@@ -148,3 +133,5 @@ Contribuições são bem-vindas! Se quiser ajudar:
 
 ## 🖼️ Capturas de Tela
 
+### ☁️ Tela com Resultado do Clima
+<img src="screenshots/home.png" alt="Tela de exibição de clima" width="300"/>
